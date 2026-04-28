@@ -1,0 +1,657 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg,
+    #ffffff,
+    #f5f5f5ff,
+    #e9e2ff,
+    #cbbafd,
+    #e0d6fd
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease-in-out infinite;
+}
+
+@keyframes gradientShift{
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
+}
+
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+  background-image: url(Navbar.jpeg);
+  background-size: auto;
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-bottom: 3px solid #4B3F63;
+  border-left: 1px solid #4B3F63;
+  border-right: 1px solid #4B3F63;
+}
+
+.logo-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:white;
+}
+
+/* MENU */
+.menu{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+.menu a{
+  text-decoration:none;
+  color:white;
+  position:relative;
+  padding:5px 0;
+  transition:0.3s;
+}
+
+.menu a::after{
+  content:"";
+  position:absolute;
+  width:0%;
+  height:2px;
+  bottom:-3px;
+  left:0;
+  background:white;
+  transition:0.3s ease;
+}
+
+.menu a:hover::after{
+  width:100%;
+}
+
+.menu a:hover{
+  color:#EDE7FF;
+}
+
+/* HAMBURGER */
+.menu-icon{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  z-index:200;
+}
+
+.menu-icon.active{
+  transform:rotate(90deg);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .menu-icon{ display:block; }
+
+  .menu{
+    position:absolute;
+    top:65px;
+    right:0;
+    width:100%;
+    background:#EDE7FF;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+    max-height:0;
+    overflow:hidden;
+    transition:0.4s;
+  }
+
+  .menu.active{
+    max-height:300px;
+    padding:15px 0;
+  }
+
+  .menu a{
+    width:100%;
+    text-align:center;
+    color:#4B3F63;
+  }
+
+  .grid-3{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+/* TITLE */
+.title{
+  text-align:center;
+  margin:20px 0;
+  color:#7E6AB8;
+}
+
+.section-title{
+  text-align:center;
+  margin-top:30px;
+  color:#4B3F63;
+}
+
+/* SEARCH */
+#search{
+  display:block;
+  margin:10px auto;
+  padding:10px;
+  width:80%;
+  border-radius:10px;
+  border: 2px solid #4B3F63;
+  border-color: #7E6AB8;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  background-size: 50%;
+  opacity: calc(50);
+  color: white;
+}
+
+
+#search:focus{
+  outline:none;
+  box-shadow:0 0 0 3px white(156,136,201,0.3);
+  color:black;
+}
+
+/* GRID */
+/* GRID 3 */
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:25px;
+  padding:0 20px;
+  max-width:1100px;
+  margin:30px auto;
+}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:25px;
+  max-width:600px;
+  margin:30px auto;
+}
+
+.grid-2 .card,
+.grid-3 .card{
+  width:100%;
+}
+
+@media(max-width:768px){
+  .grid-3{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .grid-2{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:480px){
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+}
+
+/* CARD */
+.card{
+  background:white;
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(156,136,201,0.15);
+  transition:0.3s;
+  position:relative;
+  border: 2px solid rgb(157, 105, 255);
+}
+
+.card:hover{
+  transform:translateY(-5px) scale(1.03);
+  box-shadow:0 15px 35px rgba(156,136,201,0.25);
+}
+
+.card:active{
+  transform:scale(0.95);
+}
+
+.card img{
+  width:100%;
+  height:200px; /* 🔥 fix tinggi biar konsisten */
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:10px;
+  border:2px solid black;
+}
+
+.card:hover img{
+  transform:scale(1.05);
+  transition:0.3s;
+}
+
+.card h4{
+  color:#4B3F63;
+}
+
+.card p{
+  color:#7E6AB8;
+  font-weight:600;
+}
+
+.card button{
+  margin:5px;
+  padding:6px 10px;
+  border:none;
+  border-radius:8px;
+  background:#B7A6D9;
+  color:white;
+  cursor:pointer;
+  transition: transform 0.1s ease, background 0.2s;
+}
+
+.card button:hover{
+    background:#7E6AB8;
+}
+
+.card button:active{
+  transform:scale(0.85);
+}
+
+/* EFFECT PILIH */
+.grid-3.active .card,
+.grid-2.active .card{
+  filter:blur(5px) brightness(0.8);
+  transform:scale(0.95);
+}
+
+.card.active{
+  filter:none !important;
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(156,136,201,0.6);
+  z-index:2;
+}
+
+/* CART ICON */
+.cart-icon{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:linear-gradient(135deg,#9C88C9,#7E6AB8);
+  color:white;
+  padding:12px;
+  border-radius:50%;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(126,106,184,0.4);
+}
+
+/* POPUP */
+.cart-popup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+
+.cart-box{
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  width:320px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  animation:popupFade 0.3s ease;
+}
+
+@keyframes popupFade{
+  from{ transform:translateY(20px); opacity:0; }
+  to{ transform:translateY(0); opacity:1; }
+}
+
+/* ITEM */
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:10px 0;
+  padding-bottom:8px;
+  border-bottom:1px solid #eee;
+  
+}
+
+/* QTY BUTTON (KHUSUS + -) */
+.qty-control button{
+  width:25px;
+  height:25px;
+  border:none;
+  border-radius:6px;
+  background:#B7A6D9;
+  color:white;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.qty-control button:hover{
+  background:#7E6AB8;
+}
+
+/* FIX TOMBOL TUTUP */
+.close-btn{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  background:#ddd;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.close-btn:hover{
+  background:#bbb;
+}
+
+/* TOTAL */
+.summary{
+  display:flex;
+  justify-content:space-between;
+  margin-top:15px;
+}
+
+.summary h2{
+  color:#7E6AB8;
+}
+
+\.cart-popup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+
+  display:none;
+  justify-content:center;
+  align-items:center;
+
+  z-index:9998;
+}
+
+.checkout-box{
+  background:#f5efe6;
+  padding:20px;
+  border-radius:15px;
+  width:320px;
+
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+
+  animation:popupFade 0.3s ease;
+  position:relative;
+  z-index:9999;
+}
+
+.checkout-box input,
+.checkout-box textarea,
+.checkout-box select{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.ringkasan{
+  background:white;
+  padding:10px;
+  border-radius:10px;
+  font-size:14px;
+}
+
+.btn-wa{
+  background:#28a745;
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.btn-wa:hover{
+  background:#218838;
+}
+
+.btn-close{
+  background:#dc3545;
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.btn-close:hover{
+  background:#c82333;
+}
+
+@keyframes popupFade{
+  from{
+    transform:translateY(20px);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+/* TOTAL BELANJA */
+.cart{
+  width:100%;
+  background:#EFEAFA;
+  padding:25px 20px;
+  margin-top:40px;
+  border-top:5px solid #4B3F63;
+  border-bottom: 5px solid  #4B3F63;
+}
+
+.cart h3{
+  color:#7E6AB8;
+}
+
+.cart p{
+  color:#7E6AB8;
+  font-weight:600;
+}
+
+.cart button{
+  width:100%;
+  margin-top:10px;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#9C88C9;
+  color:white;
+}
+
+.cart button:hover{
+  background:#7E6AB8;
+}
+
+/* ================= FOOTER PREMIUM ================= */
+
+.footer{
+  margin-top:50px;
+  background-image: url(Navbar.jpeg);
+  color:rgb(8, 8, 8);
+  padding:40px 20px 20px;
+  border-top: 3px solid black;
+}
+
+/* CONTAINER */
+.footer-container{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  max-width:1100px;
+  margin:auto;
+  flex-wrap:wrap;
+}
+
+/* LEFT */
+.footer-left{
+  flex:1;
+  min-width:250px;
+}
+
+.footer-left h2{
+  margin-bottom:10px;
+}
+
+.footer-desc{
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:15px;
+  opacity:0.9;
+}
+
+/* RIGHT */
+.footer-right{
+  flex:1;
+  min-width:250px;
+}
+
+.footer-right h4{
+  margin-bottom:10px;
+}
+
+/* SOSIAL */
+.footer-social{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:15px;
+}
+
+.footer-social a{
+  text-decoration:none;
+  color:rgb(3, 3, 3);
+  transition:0.3s;
+}
+
+.footer-social a:hover{
+  color:#ffd6f0;
+}
+
+/* MARKET */
+.footer-market{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  text-decoration: none;
+}
+
+.footer-market span{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding-left: 100px;
+}
+
+/* ICON SIZE */
+.footer i{
+  font-size:18px;
+}
+
+/* BOTTOM */
+.footer-bottom{
+  text-align:center;
+  margin-top:30px;
+  padding-top:15px;
+  border-top:1px solid rgba(22, 21, 21, 0.3);
+  font-style:italic;
+  font-size:14px;
+  opacity:0.9;
+}
+
+
+
+/* HILANGIN STYLE LINK */
+.footer a{
+  text-decoration:none;
+  color:rgb(3, 3, 3);
+}
+
+/* KHUSUS MARKET (TOKPED & SHOPEE) */
+.footer-market a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:rgb(24, 24, 24);
+  text-decoration:none;
+  transition:0.3s;
+}
+
+/* HOVER BIAR SAMA KAYAK IG & TIKTOK */
+.footer-market a:hover{
+  color:#ffd6f0;
+  transform:translateX(-3px);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .footer-container{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .footer-market,
+  .footer-social{
+    align-items:center;
+  }
+}
+
+
+/* ANIMASI FADE */
+.product-img{
+  transition: opacity 0.3s ease;
+}
+
+.product-img.fade-out{
+  opacity:0;
+}
+
+.product-img.fade-in{
+  opacity:1;
+}
+
+.donut-card .variant{
+  width:100%;
+  margin:10px 0;
+}
+
+.donut-card select{
+  width:100%;
+  padding:6px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.qty-control{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+}

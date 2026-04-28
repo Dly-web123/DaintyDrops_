@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DaintyDrops Shop</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Menu.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="HalamanUtama.html" class="logo-box">
+    <h2>DaintyDrops</h2>
+  </a>
+
+  <div class="menu-icon" id="menu-icon">☰</div>
+
+  <ul class="menu" id="menu">
+    <li><a href="HalamanUtama.html">Beranda</a></li>
+    <li><a href="TentangKami.html">Tentang Kami</a></li>
+    <li><a href="HalamanCuring.html">Tentang Curing</a></li>
+  </ul>
+</nav>
+
+<h1 class="title">Pencarian</h1>
+
+<input type="text" id="search" placeholder="Cari produk...">
+
+<!-- SABUN -->
+<h2 class="section-title">SABUN</h2>
+<div class="grid-3">
+
+<div class="card" data-name="Strawberry Cupcake" data-price="35000">
+<img src="Strawberry Cupcake.jpeg">
+<h4>Strawberry Cupcake</h4>
+<p>Rp35000</p>
+<button class="minus">-</button>
+<span class="qty">0</span>
+<button class="plus">+</button>
+</div>
+
+<div class="card" data-name="Donut" data-price="35000">
+  <img src="Donut Strawberry (1).jpeg" class="product-img">
+
+  <h4>Donut</h4>
+  <p>Rp35000</p>
+
+  <div class="variant">
+    <select class="variant">
+      <option value="Strawberry" data-img="Donut Strawberry (1).jpeg">Strawberry</option>
+      <option value="Lemon" data-img="Donut Lemon.jpeg">Lemon</option>
+    </select>
+  </div>
+
+    <div class="qty-control">
+     <button class="minus">-</button>
+     <span class="qty">0</span>
+     <button class="plus">+</button>
+    </div>
+</div>
+
+<div class="card" data-name="Putu Ayu" data-price="35000">
+<img src="Putu Ayu.jpeg">
+<h4>Putu Ayu</h4>
+<p>Rp35000</p>
+<button class="minus">-</button>
+<span class="qty">0</span>
+<button class="plus">+</button>
+</div>
+
+<div class="card" data-name="Madeleine" data-price="35000">
+<img src="(3in1) Lemon Madeleines.jpeg">
+<h4>(3in1) Lemon Madeleine</h4>
+<p>Rp35000</p>
+<button class="minus">-</button>
+<span class="qty">0</span>
+<button class="plus">+</button>
+</div>
+
+<div class="card" data-name="Waffle" data-price="35000">
+<img src="Waffle.jpeg">
+<h4>Waffle</h4>
+<p>Rp35000</p>
+<button class="minus">-</button>
+<span class="qty">0</span>
+<button class="plus">+</button>
+</div>
+
+<div class="card" data-name="Apple Pie" data-price="35000">
+<img src="Apple Pie.jpeg">
+<h4>Apple Pie</h4>
+<p>Rp35000</p>
+<button class="minus">-</button>
+<span class="qty">0</span>
+<button class="plus">+</button>
+</div>
+
+<div class="card" data-name="Bread" data-price="35000">
+<img src="Bread.jpeg">
+<h4>Bread</h4>
+<p>Rp35000</p>
+<button class="minus">-</button>
+<span class="qty">0</span>
+<button class="plus">+</button>
+</div>
+
+<div class="card" data-name="Lapis" data-price="35000">
+<img src="Lapis Surabaya.jpeg">
+<h4>Lapis Surabaya</h4>
+<p>Rp35000</p>
+<button class="minus">-</button>
+<span class="qty">0</span>
+<button class="plus">+</button>
+</div>
+
+<div class="card" data-name="Canele" data-price="35000">
+<img src="(3in1) Canelle.jpeg">
+<h4>(3in1) Canelle</h4>
+<p>Rp35000</p>
+<button class="minus">-</button>
+<span class="qty">0</span>
+<button class="plus">+</button>
+</div>
+
+</div>
+
+<!-- LIP BALM -->
+<h2 class="section-title">LIP BALM</h2>
+<div class="grid-2">
+
+<div class="card" data-name="Cream Brulee" data-price="25000">
+<img src="CremeBrulee_Lipbalm_DaintyDrops.jpg">
+<h4>Cream Brulee</h4>
+<p>Rp25000</p>
+<button class="minus">-</button>
+<span class="qty">0</span>
+<button class="plus">+</button>
+</div>
+
+<div class="card" data-name="Honey Strawberry" data-price="25000">
+<img src="HoneyStrawberry_Lipbalm_DaintyDrops.jpg">
+<h4>Honey Strawberry</h4>
+<p>Rp25000</p>
+<button class="minus">-</button>
+<span class="qty">0</span>
+<button class="plus">+</button>
+</div>
+
+</div>
+
+<!-- CART ICON -->
+<div class="cart-icon" onclick="toggleCart()">
+🛒 <span id="cart-count">0</span>
+</div>
+
+<!-- POPUP CHECKOUT -->
+<div class="cart-popup" id="cart-popup">
+  <div class="checkout-box">
+
+    <h3>Checkout Pesanan</h3>
+
+    <input type="text" id="nama" placeholder="Nama Pemesan">
+    <input type="text" id="hp" placeholder="No. Telepon">
+    <textarea id="alamat" placeholder="Alamat"></textarea>
+    
+    <select id="metode">
+        <option value="qris">QRIS</option>
+        <option value="transfer">Transfer</option>
+    </select>
+
+    <div class="ringkasan">
+      <h4>Ringkasan Pesanan:</h4>
+      <div id="checkout-items"></div>
+    </div>
+
+    <!-- 🔥 PENTING: PAKE ID BUKAN onclick -->
+    <button class="btn-wa" id="btn-wa">Kirim ke WhatsApp</button>
+
+    <button class="btn-close" onclick="toggleCart()">Tutup</button>
+
+  </div>
+</div>
+
+<!-- TOTAL BELANJA -->
+<div class="cart">
+<h3>Total Belanja</h3>
+<div id="cart-items"></div>
+<p>Total: <span id="total">Rp0</span></p>
+</div>
+
+
+<footer class="footer">
+  
+  <div class="footer-container">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <h2>DaintyDrops</h2>
+      <p class="footer-desc">
+        DaintyDrops adalah handmade dessert soap unik dengan desain lucu seperti makanan,
+        tapi ini bukan untuk dimakan 💗 cocok untuk hadiah, koleksi, atau self-care kamu.
+      </p>
+
+      <h4>Hubungi Kami</h4>
+      <p><i class="ph ph-whatsapp-logo"></i> 081213893999</p>
+    </div>
+
+ <!-- RIGHT -->
+    <div class="footer-right">
+      <h4>Media Sosial</h4>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/_daintydrops?igsh=dDhwYXo1NDZzN3c0" target="_blank">
+          <i class="ph ph-instagram-logo"></i> Instagram: @_DaintyDrops
+        </a>
+        <a href="https://www.tiktok.com/@_daintydrops?_r=1&_t=ZS-95keommcBq0" target="_blank">
+          <i class="ph ph-tiktok-logo"></i> TikTok: @_DaintyDrops
+        </a>
+      </div>
+
+      <h4>Tersedia di</h4>
+      <div class="footer-market">
+        <a href="https://id.shp.ee/MMTPNcia" target="_blank">
+          <i class="ph ph-storefront"></i> Shopee: @DaintyDrops
+        </a>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <h2><div id="#BukanMakananTapiSabun"></div></h2>
+  </div>
+
+</footer>
+
+
+
+<script src="Menu.js"></script>
+</body>
+</html>
