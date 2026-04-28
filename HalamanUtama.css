@@ -132,7 +132,7 @@ body{
     right:-100%; /* awalnya sembunyi */
     width:70%;
     height:100vh;
-    background-image: url(../Gambar\ Halaman\ Utama/Navbar.jpeg);
+    background-image: url(Navbar.jpeg);
     border: 1px solid black ;
     backdrop-filter:blur(10px);
 
